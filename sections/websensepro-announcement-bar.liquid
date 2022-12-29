@@ -1,0 +1,114 @@
+{%- if  section.blocks.size > 0 and section.settings.show_announcement_bar -%}
+<div class="websensepro-announcement-bar swiper-container">
+  <div class="websensepro-messages swiper-wrapper">
+    {%- for block in section.blocks -%}
+    <div class="websensepro-message swiper-slide">{{block.settings.message}}</div>
+    {%- endfor -%}
+  </div>
+  <div class="websensepro-swiper-button swiper-button-prev"></div>
+  <div class="websensepro-swiper-button swiper-button-next"></div>
+</div>
+<!-- code by websensepro.com -->
+<script src="//cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script>
+<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css" />
+<script>
+  const swiper = new Swiper('.swiper-container', {
+    {%- if section.settings.autoplay %}
+    autoplay: {delay: {{section.settings.delay}} },
+    {%- endif -%}
+    loop: true,
+    navigation: {
+      nextEl: '.swiper-button-next',
+      prevEl: '.swiper-button-prev',
+    },
+  });
+</script>
+<style>
+  .websensepro-announcement-bar{
+    background:{{section.settings.colorBackground}};
+    border-bottom: 1px solid {{ section.settings.colorBorder }};
+    height: 2.5em;
+    position: relative;
+    overflow: hidden;
+  }
+  .websensepro-announcement-bar .websensepro-message{
+    text-align:center;
+    color:{{section.settings.colorText}};
+    padding-top:3px;
+    padding-bottom:3px;
+  }
+  .websensepro-announcement-bar .swiper-button-next:after, .websensepro-announcement-bar .swiper-container-rtl .swiper-button-prev:after,
+  .websensepro-announcement-bar .swiper-button-prev:after, .websensepro-announcement-bar .swiper-container-rtl .swiper-button-next:after{
+    font-size: 15px;
+    font-weight: bold;
+    color:{{section.settings.colorText}};
+  }
+
+  .websensepro-swiper-button {
+    visibility: hidden!important; 
+  }
+  {%- if  section.blocks.size < 2 %}
+  .websensepro-announcement-bar .websensepro-swiper-button{display:none!important;}
+  {%- endif -%}
+  .websensepro-swiper-button {
+    display: block !important;
+    top: 75% !important;
+  }
+
+</style>
+{%- endif -%}
+
+{% schema %}
+  {
+    "name": "Announcement Bar",
+    "settings": [
+      {
+        "type": "checkbox",
+        "id": "show_announcement_bar",
+        "label": "Show"
+      },
+      {
+        "type": "checkbox",
+        "id": "autoplay",
+        "label": "Autoplay"
+      },
+      {
+        "type": "text",
+        "id": "delay",
+        "label": "Delay between transitions (in ms)",
+        "default": "5000"
+      },
+      {
+        "type": "color",
+        "id": "colorBackground",
+        "label": "Background color",
+        "default": "#ffffff"
+      },
+      {
+        "type": "color",
+        "id": "colorText",
+        "label": "Text color",
+        "default": "#000"
+      },
+      {
+        "type": "color",
+        "id": "colorBorder",
+        "label": "Border color",
+        "default": "#d9d9d9"
+      }
+],
+"blocks": [
+      {
+        "type": "header",
+        "name": "Message",
+        "settings": [
+{
+              "id": "message",
+              "type": "textarea",
+             "label": "Message"
+            }
+        ]
+      }
+]
+  }
+{% endschema %}

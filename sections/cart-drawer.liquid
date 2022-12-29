@@ -1,0 +1,76 @@
+{%- render 'cart-drawer' -%}
+{% schema %}
+{
+  "name": "Cart drawer",
+  "settings": [
+    {
+      "type": "header",
+      "content": "Subheading"
+    },
+    {
+      "type": "text",
+      "id": "subheading",
+      "label": "Text"
+    },
+    {
+      "type": "range",
+      "id": "font_size_desktop",
+      "min": 10,
+      "max": 40,
+      "step": 1,
+      "unit": "px",
+      "label": "Desktop font size",
+      "default": 16
+    },
+    {
+      "type": "range",
+      "id": "font_size_mobile",
+      "min": 8,
+      "max": 40,
+      "step": 1,
+      "unit": "px",
+      "label": "Mobile font size",
+      "default": 10
+    },
+    {
+      "type": "color",
+      "id": "font_color",
+      "label": "Color"
+    },
+    {
+      "type": "header",
+      "content": "Bottom text"
+    },
+    {
+      "type": "text",
+      "id": "bottom_text",
+      "label": "Text"
+    },
+    {
+      "type": "range",
+      "id": "bottom_font_size_desktop",
+      "min": 10,
+      "max": 40,
+      "step": 1,
+      "unit": "px",
+      "label": "Desktop font size",
+      "default": 16
+    },
+    {
+      "type": "range",
+      "id": "bottom_font_size_mobile",
+      "min": 8,
+      "max": 40,
+      "step": 1,
+      "unit": "px",
+      "label": "Mobile font size",
+      "default": 10
+    },
+    {
+      "type": "color",
+      "id": "bottom_font_color",
+      "label": "Color"
+    }
+  ]
+}
+{% endschema %}

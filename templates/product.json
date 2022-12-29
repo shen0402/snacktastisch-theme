@@ -1,0 +1,240 @@
+{
+  "sections": {
+    "main": {
+      "type": "main-product",
+      "blocks": {
+        "vendor": {
+          "type": "text",
+          "settings": {
+            "text": "Mit dem code hello 20% sparen ab 100€ Warenkorbwert",
+            "text_style": "uppercase"
+          }
+        },
+        "title": {
+          "type": "title",
+          "settings": {
+          }
+        },
+        "232017eb-1ae9-400a-b9d2-ed5b70c5482e": {
+          "type": "rating",
+          "settings": {
+          }
+        },
+        "price": {
+          "type": "price",
+          "settings": {
+          }
+        },
+        "variant_picker": {
+          "type": "variant_picker",
+          "settings": {
+            "picker_type": "dropdown"
+          }
+        },
+        "quantity_selector": {
+          "type": "quantity_selector",
+          "disabled": true,
+          "settings": {
+          }
+        },
+        "03c1e11b-d82c-4c14-9304-3601c3a5e85a": {
+          "type": "stock-notice",
+          "settings": {
+            "content": "Auf Lager -Versand innerhalb 24 Stunden"
+          }
+        },
+        "buy_buttons": {
+          "type": "buy_buttons",
+          "settings": {
+            "show_dynamic_checkout": false
+          }
+        },
+        "00e44e02-f368-46d5-bdb2-f14436ab69e6": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/trustbadges.png"
+          }
+        },
+        "description": {
+          "type": "description",
+          "settings": {
+          }
+        },
+        "0a4af7f1-9159-4208-97f6-12658e168d4b": {
+          "type": "list",
+          "settings": {
+            "content": "Mit Liebe verpackt in Berlin, Wow Effekt garantiert, Geschmacksexplosion"
+          }
+        },
+        "collapsible-row-0": {
+          "type": "collapsible_tab",
+          "settings": {
+            "heading": "Materials",
+            "icon": "leather",
+            "content": "",
+            "page": ""
+          }
+        },
+        "collapsible-row-1": {
+          "type": "collapsible_tab",
+          "settings": {
+            "heading": "Versand",
+            "icon": "truck",
+            "content": "<p>Wir versenden alle Bestellungen innerhalb 24 Stunden aus Berlin. Die Lieferzeit beträgt 1-3 Werktage. <\/p>",
+            "page": ""
+          }
+        },
+        "collapsible-row-2": {
+          "type": "collapsible_tab",
+          "settings": {
+            "heading": "Dimensions",
+            "icon": "ruler",
+            "content": "",
+            "page": ""
+          }
+        },
+        "collapsible-row-3": {
+          "type": "collapsible_tab",
+          "settings": {
+            "heading": "Care Instructions",
+            "icon": "heart",
+            "content": "",
+            "page": ""
+          }
+        }
+      },
+      "block_order": [
+        "vendor",
+        "title",
+        "232017eb-1ae9-400a-b9d2-ed5b70c5482e",
+        "price",
+        "variant_picker",
+        "quantity_selector",
+        "03c1e11b-d82c-4c14-9304-3601c3a5e85a",
+        "buy_buttons",
+        "00e44e02-f368-46d5-bdb2-f14436ab69e6",
+        "description",
+        "0a4af7f1-9159-4208-97f6-12658e168d4b",
+        "collapsible-row-0",
+        "collapsible-row-1",
+        "collapsible-row-2",
+        "collapsible-row-3"
+      ],
+      "settings": {
+        "enable_sticky_info": true,
+        "media_position": "left",
+        "gallery_layout": "stacked",
+        "media_size": "large",
+        "mobile_thumbnails": "hide",
+        "hide_variants": true,
+        "enable_video_looping": false,
+        "padding_top": 36,
+        "padding_bottom": 12
+      }
+    },
+    "9f7f8690-6620-427e-b9ba-7632c4d8f6f2": {
+      "type": "image-banner",
+      "blocks": {
+        "template--16496319922442__9f7f8690-6620-427e-b9ba-7632c4d8f6f2-16707920490e11838f-0": {
+          "type": "heading",
+          "disabled": true,
+          "settings": {
+            "heading": "Image banner",
+            "heading_size": "h1"
+          }
+        },
+        "template--16496319922442__9f7f8690-6620-427e-b9ba-7632c4d8f6f2-16707920490e11838f-1": {
+          "type": "text",
+          "disabled": true,
+          "settings": {
+            "text": "Give customers details about the banner image(s) or content on the template.",
+            "text_style": "body"
+          }
+        }
+      },
+      "block_order": [
+        "template--16496319922442__9f7f8690-6620-427e-b9ba-7632c4d8f6f2-16707920490e11838f-0",
+        "template--16496319922442__9f7f8690-6620-427e-b9ba-7632c4d8f6f2-16707920490e11838f-1"
+      ],
+      "settings": {
+        "image_2": "shopify:\/\/shop_images\/snacktastisch-banner-woman.jpg",
+        "image_overlay_opacity": 70,
+        "image_height": "small",
+        "adapt_height_first_image": false,
+        "desktop_content_position": "middle-center",
+        "show_text_box": true,
+        "desktop_content_alignment": "center",
+        "color_scheme": "accent-1",
+        "mobile_content_alignment": "center",
+        "stack_images_on_mobile": true,
+        "show_text_below": true
+      }
+    },
+    "multicolumn": {
+      "type": "multicolumn",
+      "blocks": {
+        "column-0": {
+          "type": "column",
+          "settings": {
+            "title": "Deine Lieblingssnacks bequem zu dir nach Hause geliefert!",
+            "text": "<p>Du planst einen Filmeabend oder möchtest deinen Liebsten eine Freude machen? Wir helfen dir dabei! Wähle aus über 1000 verschiedenen Süßigkeiten und bekomm sie ganz entspannt bis zu deiner Haustür geliefert!<\/p>",
+            "link_label": "",
+            "link": ""
+          }
+        },
+        "column-1": {
+          "type": "column",
+          "settings": {
+            "title": "Live Kundensupport via Chat",
+            "text": "<p>Hast du Fragen oder fehlt dir eine bestimmte Süßigkeit? Lass es und über den Live Chat Button unten rechts wissen und wir kümmern uns sofort um dein Anliegen!<\/p>",
+            "link_label": "",
+            "link": ""
+          }
+        }
+      },
+      "block_order": [
+        "column-0",
+        "column-1"
+      ],
+      "settings": {
+        "title": "",
+        "heading_size": "h1",
+        "image_width": "full",
+        "image_ratio": "adapt",
+        "columns_desktop": 2,
+        "column_alignment": "center",
+        "background_style": "none",
+        "button_label": "",
+        "button_link": "",
+        "color_scheme": "background-1",
+        "columns_mobile": "1",
+        "swipe_on_mobile": false,
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "product-recommendations": {
+      "type": "product-recommendations",
+      "settings": {
+        "heading": "You may also like",
+        "heading_size": "h2",
+        "products_to_show": 4,
+        "columns_desktop": 4,
+        "color_scheme": "background-1",
+        "image_ratio": "square",
+        "show_secondary_image": true,
+        "show_vendor": false,
+        "show_rating": false,
+        "columns_mobile": "2",
+        "padding_top": 36,
+        "padding_bottom": 28
+      }
+    }
+  },
+  "order": [
+    "main",
+    "9f7f8690-6620-427e-b9ba-7632c4d8f6f2",
+    "multicolumn",
+    "product-recommendations"
+  ]
+}
