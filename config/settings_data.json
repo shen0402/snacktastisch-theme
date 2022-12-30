@@ -266,9 +266,9 @@
           "show_announcement_bar": true,
           "autoplay": true,
           "delay": "5000",
-          "colorBackground": "#fd8db7",
+          "colorBackground": "#ef8db6",
           "colorText": "#ffffff",
-          "colorBorder": "#fd8db7"
+          "colorBorder": "#ef8db6"
         }
       },
       "cart-drawer": {
