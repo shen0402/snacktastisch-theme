@@ -2960,6 +2960,7 @@ details-disclosure > details {
   }
 }
 .websenseprodivider{
+      display: none;
 overflow:hidden;
 position:relative;
 }
