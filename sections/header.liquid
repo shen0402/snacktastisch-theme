@@ -36,6 +36,12 @@
     max-width: {{ section.settings.logo_width }}px;
   }
 
+  @media (max-width: 749px) {
+    .header__heading-logo {
+      max-width: 108px;
+    }
+  }
+
   @media screen and (min-width: 990px) {
     header-drawer {
       display: none;
@@ -55,6 +61,8 @@
   .list-menu--inline {
     display: inline-flex;
     flex-wrap: wrap;
+    justify-content: center;
+    width: 100%;
   }
 
   summary.list-menu__item {
@@ -197,38 +205,37 @@
                         {%- endif -%}
                       </li>
                     {%- endfor -%}
-                    {%- if section.settings.show_contact_email == true or section.settings.show_contact_phone == true -%}
-                      {%- assign s = section.settings -%}
-                      <li class="header__contact">
-                        {%- if s.show_contact_email -%}
-                          <a href="mailto:{{ s.contact_email }}">
-                            {%- assign icon_email_alt = s.icon_email.alt | default: shop.name | escape -%}
-                            {%- assign icon_email_height = 20 | divided_by: s.icon_email.aspect_ratio -%}
-                            {{ s.icon_email | image_url: width: 20 | image_tag:
-                              class: 'header__contact-icon',
-                              widths: '20',
-                              height: icon_email_height,
-                              width: 20,
-                              alt: logo_email_alt
-                            }}
-                          </a>
-                        {%- endif -%}
-                        {%- if s.show_contact_phone -%}
-                          <a href="tel:{{ s.contact_phone }}">
-                            {%- assign icon_phone_alt = s.icon_phone.alt | default: shop.name | escape -%}
-                            {%- assign icon_phone_height = 20 | divided_by: s.icon_phone.aspect_ratio -%}
-                            {{ s.icon_phone | image_url: width: 20 | image_tag:
-                              class: 'header__contact-icon',
-                              widths: '20',
-                              height: icon_phone_height,
-                              width: 20,
-                              alt: icon_phone_alt
-                            }}
-                          </a>
-                        {%- endif -%}
-                      </li>
-                    {%- endif -%}
                   </ul>
+                  {%- if section.settings.show_contact_email == true or section.settings.show_contact_phone == true -%}
+                    {%- assign s = section.settings -%}
+                    {% if s.contact_text != blank %}
+                      <div class="contact__text">
+                        {{ s.contact_text }}
+                      </div>
+                    {% endif %}
+                    <ul class="header__contact">
+                      {% if s.show_contact_email %}
+                        <li>
+                          <a class="header__contact-icon" href="mailto: {{s.contact_email}}">
+                            {% if s.icon_email != blank %}
+                              {{ s.icon_email }}
+                            {% endif %}
+                            <span>{{ s.contact_email }}</span>
+                          </a>
+                        </li>
+                        {% if s.show_contact_phone %}
+                        <li>
+                          <a class="header__contact-icon" href="tel: {{ s.contact_phone }}">
+                            {% if s.icon_phone != blank %}
+                              {{ s.icon_phone }}
+                            {% endif %}
+                            <span>{{ s.contact_phone }}</span>
+                          </a>
+                        </li>
+                        {% endif %}
+                      {% endif %}
+                    </ul>
+                  {%- endif -%}
                 </nav>
                 <div class="menu-drawer__utility-links">
                   {%- if shop.customer_accounts_enabled -%}
@@ -473,37 +480,6 @@
                 {%- endif -%}
               </li>
             {%- endfor -%}
-            {%- if section.settings.show_contact_email == true or section.settings.show_contact_phone == true -%}
-              {%- assign s = section.settings -%}
-              <li class="header__contact">
-                {%- if s.show_contact_email -%}
-                  <a href="mailto:{{ s.contact_email }}">
-                    {%- assign icon_email_alt = s.icon_email.alt | default: shop.name | escape -%}
-                    {%- assign icon_email_height = 20 | divided_by: s.icon_email.aspect_ratio -%}
-                    {{ s.icon_email | image_url: width: 20 | image_tag:
-                      class: 'header__contact-icon',
-                      widths: '20',
-                      height: icon_email_height,
-                      width: 20,
-                      alt: logo_email_alt
-                    }}
-                  </a>
-                {%- endif -%}
-                {%- if s.show_contact_phone -%}
-                  <a href="tel:{{ s.contact_phone }}">
-                    {%- assign icon_phone_alt = s.icon_phone.alt | default: shop.name | escape -%}
-                    {%- assign icon_phone_height = 20 | divided_by: s.icon_phone.aspect_ratio -%}
-                    {{ s.icon_phone | image_url: width: 20 | image_tag:
-                      class: 'header__contact-icon',
-                      widths: '20',
-                      height: icon_phone_height,
-                      width: 20,
-                      alt: icon_phone_alt
-                    }}
-                  </a>
-                {%- endif -%}
-              </li>
-            {%- endif -%}
           </ul>
         </nav>
       {%- else -%}
@@ -653,7 +629,7 @@
       </details-modal>
 
       {%- if shop.customer_accounts_enabled -%}
-        <a href="{%- if customer -%}{{ routes.account_url }}{%- else -%}{{ routes.account_login_url }}{%- endif -%}" class="header__icon header__icon--account link focus-inset{% if section.settings.menu != blank %} small-hide{% endif %}">
+        <a href="{%- if customer -%}{{ routes.account_url }}{%- else -%}{{ routes.account_login_url }}{%- endif -%}" class="header__icon header__icon--account link focus-inset">
           {% render 'icon-account' %}
           <span class="visually-hidden">
             {%- liquid
@@ -990,7 +966,13 @@
       "content": "Contact email"
     },
     {
-      "type": "image_picker",
+      "type": "richtext",
+      "id": "contact_text",
+      "label": "Text",
+      "default": "<p>Unseren Kundenservice erreichst du über Email oder via Live Chat</p>"
+    },
+    {
+      "type": "html",
       "id": "icon_email",
       "label": "Email icon"
     },
@@ -1010,7 +992,7 @@
       "content": "Contact phone"
     },
     {
-      "type": "image_picker",
+      "type": "html",
       "id": "icon_phone",
       "label": "Phone icon"
     },

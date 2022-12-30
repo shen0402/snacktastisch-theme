@@ -1,0 +1,129 @@
+.list-menu .list-menu__item {
+    font-style: normal;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 27px;
+    color: #344A53;
+    opacity: 0.5;
+    transition: 0.3s;
+}
+
+.list-menu .list-menu__item:hover, .list-menu .list-menu__item[aria-current="page"] {
+    opacity: 1;
+    text-decoration: none;
+}
+
+@media (max-width: 989px) {
+    .list-menu .list-menu__item:hover, .list-menu .list-menu__item[aria-current="page"] {
+        color: #344A53;
+    }
+}
+
+.list-menu .list-menu__item[aria-current="page"] {
+    font-weight: 700;
+}
+
+.header__active-menu-item, .list-menu .list-menu__item:hover span {
+    text-decoration: none;
+    color: #344A53;
+}
+
+@media (min-width: 750px) {
+    .page-width.header {
+        padding-left: 93px;
+        padding-right: 93px;
+    }
+}
+
+.page-width {
+    padding: 0 32px;
+}
+
+@media (max-width: 749px) {
+    .list-menu li:first-of-type .list-menu__item {
+        padding-top: 0;
+    }
+    .list-menu .list-menu__item {
+        font-weight: 700;
+        opacity: 1;
+        padding: 15px 0;
+    }
+}
+
+.menu-drawer__utility-links {
+    display: none;
+}
+
+.header .menu-drawer, .header .menu-drawer__inner-container {
+    background-color: #fff !important;
+    border: none !important;
+}
+
+.header .menu-drawer {
+    width: 100vw !important;
+    overflow-x: visible;
+}
+
+.menu-drawer__navigation {
+    padding: 30px 32px !important;
+}
+
+.menu-drawer__menu {
+    padding-bottom: 45px !important;
+    border-bottom: 1px solid #EF8DB6;
+}
+
+#menu-drawer::before {
+    position: absolute;
+    border: solid;
+    border-color: #fff transparent;
+    border-width: 26px 13px 0px 13px;
+    content: "";
+    left: 26px;
+    top: -20px;
+    z-index: 3;
+    transform: rotate(180deg);
+}
+
+@media (min-width: 750px) {
+    #menu-drawer::before {
+        left: 87px;
+    }
+}
+
+.menu-drawer__navigation .header__contact {
+    list-style: none;
+    padding: 0;
+    display: block;
+    margin: 0;
+}
+
+.menu-drawer__navigation .header__contact .header__contact-icon {
+    display: flex;
+    text-decoration: none;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 27px;
+    color: #344A53;
+    padding: 0 0 20px;
+}
+
+.menu-drawer__navigation .header__contact .header__contact-icon svg {
+    margin-right: 20px;
+}
+
+.contact__text {
+    font-style: normal;
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 21px;
+    color: #344A53;
+    margin-top: 60px;
+    margin-bottom: 20px;
+    letter-spacing: 0;
+}
+
+.contact__text p {
+    margin: 0;
+}
