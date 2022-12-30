@@ -153,7 +153,7 @@
           "logo": "shopify:\/\/shop_images\/snacktastisch_transparent_logo.png",
           "logo_width": 140,
           "logo_position": "middle-left",
-          "menu": "main-menu",
+          "menu": "main-menu-new",
           "menu_type_desktop": "dropdown",
           "show_line_separator": false,
           "enable_sticky_header": true,
