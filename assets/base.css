@@ -2966,7 +2966,7 @@ position:relative;
 .websenseprodivider::before{ 
 content:'';
 position: absolute;
-z-index: 100;
+z-index: 10;
 pointer-events: none;
 background-repeat: no-repeat;
 bottom: -0.1vw;
